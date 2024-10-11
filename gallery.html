@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+            <div class="hamburger">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="article.html">Article</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>            
+        </header>        
+
+    <main class="photo-gallery">
+        <div class="photo-container">
+            <img id="galleryImage" src="Trees.webp" alt="photo description">
+        </div>
+        <button class="arrow" id="prevBtn">&#10094;</button>
+        <button class="arrow" id="nextBtn">&#10095;</button>
+    </main>   
+
+    <script>
+        const images = [
+            "Trees.webp",
+            "Ukraine.jpeg",
+            "Fire.jpeg",
+            "coloradotestsitepic.jpeg"
+        ];
+        let currentIndex = 0;
+
+        const galleryImage = document.getElementById('galleryImage');
+
+        function updateImage() {
+            galleryImage.src = images[currentIndex];
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', function() {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            updateImage();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            updateImage();
+        });
+    </script>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click',function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+
+<button id="darkModeToggle">Toggle Dark Mode</button>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("darkModeToggle");
+        const body = document.body;
+    
+        // Check for saved preference
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark-mode");
+        }
+    
+        toggleButton.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                localStorage.setItem("darkMode", "disabled");
+            }
+        });
+    });
+    </script>    
+    
+</body>
+</html>

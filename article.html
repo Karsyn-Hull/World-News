@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Article</h1>
+            <div class="hamburger">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="article.html">Article</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>            
+        </header>
+        
+    <main class="article-header">
+        <h1>Even trees 'hold their breath' to avoid harmful wildfire smoke, research finds</h1>
+        <p>By Mj Riches published July 31, 2024</p>
+    </main>
+
+    <main class="article-conntent">
+        <section>
+            <h2>Trees don't like to breathe wildfire smoke, either.</h2>
+            <div class="photo"><img src="Trees.webp" alt="photo descrition"></div>
+            <p>When wildfire smoke is in the air, doctors urge people to stay indoors to avoid breathing in harmful particles and gases. But what happens to trees and other plants that can't escape from the smoke?</p>
+            <p>They may respond a bit like us, it turns out: Some trees essentially shut their windows and doors and hold their breath.As atmospheric and chemical scientists, we study the air quality and ecological effects of wildfire smoke and other pollutants. In a study that started quite by accident when smoke overwhelmed our research site in Colorado, we were able to watch in real time how the leaves of living pine trees responded.</p>
+            <h2>How plants breathe</h2>
+            <p>Plants have pores on the surface of their leaves called stomata. These pores are much like our mouths, except that while we inhale oxygen and exhale carbon dioxide, plants inhale carbon dioxide and exhale oxygen. Both humans and plants inhale other chemicals in the air around them and exhale chemicals produced inside them — coffee breath for some people, pine scents for some trees. Unlike humans, however, leaves breathe in and out at the same time, constantly taking in and releasing atmospheric gases.</p>
+            <h2>Clues from over a century of research</h2>
+            <p>In the early 1900s, scientists studying trees in heavily polluted areas discovered that those chronically exposed to pollution from coal-burning had black granules clogging the leaf pores through which plants breathe. They suspected that the substance in these granules was partly created by the trees, but due to the lack of available instruments at the time, the chemistry of those granules was never explored, nor were the effects on the plants' photosynthesis.Most modern research into wildfire smoke's effects has focused on crops, and the results have been conflicting. For example, a study of multiple crop and wetland sites in California showed that smoke scatters light in a way that made plants more efficient at photosynthesis and growth. However, a lab study in which plants were exposed to artificial smoke found that plant productivity dropped during and after smoke exposure — though those plants did recover after a few hours. There are other clues that wildfire smoke can impact plants in negative ways. You may have even tasted one: When grapes are exposed to smoke, their wine can be tainted.</p>
+            <h2>What makes smoke toxic, even far from the fire</h2>
+            <p>When wildfire smoke travels long distances, the smoke cooks in sunlight and chemically changes. Mixing volatile organic compounds, nitrogen oxides and sunlight will make ground-level ozone, which can cause breathing problems in humans. It can also damage plants by degrading the leaf surface, oxidizing plant tissue and slowing photosynthesis.</p>
+            <div class="photo"><img src="Fire.jpeg" alt="photo descrition"></div>
+            <p>While scientists usually think about urban regions as being large sources of ozone that effect crops downwind, wildfire smoke is an emerging concern. Other compounds, including nitrogen oxides, can also harm plants and reduce photosynthesis. Taken together, studies suggest that wildfire smoke interacts with plants, but in poorly understood ways. This lack of research is driven by the fact that studying smoke effects on the leaves of living plants in the wild is hard: Wildfires are hard to predict, and it can be unsafe to be in smoky conditions.</p>
+            <div class="photo"><img src="coloradotestsitepic.jpeg" alt="photo descrition"></div>
+            <p>A clear day at the Colorado test site, on the left, compared to the smoky day when trees responded to the poor air quality, on the right.  (Image credit: Mj Riches, CC BY-SA)</p>
+            <p>With these unexpected results, we decided to try to force photosynthesis and see if we could "defibrillate" the leaf into its normal rhythm. By changing the leaf's temperature and humidity, we cleared the leaf's "airways" and saw a sudden improvement in photosynthesis and a burst of volatile organic compounds. What our months of data told us is that some plants respond to heavy bouts of wildfire smoke by shutting down their exchange with outside air. They are effectively holding their breath, but not before they have been exposed to the smoke.</p>
+            <p>We hypothesize a few processes that could have caused leaves to close their pores: Smoke particles could coat the leaves, creating a layer that prevents the pores from opening. Smoke could also enter the leaves and clog their pores, keeping them sticky. Or the leaves could physically respond to the first signs of smoke and close their pores before they get the worst of it.
+
+            It's likely a combination of these and other responses.</p>
+            <h2>The long-term impact is still unknown</h2>
+            <p>The jury is still out on exactly how long the effects of wildfire smoke last and how repeated smoke events will affect plants — including trees and crops — over the long term.With wildfires increasing in severity and frequency due to climate change, forest management policies and human behavior, it's important to gain a better understanding of the impact.</p>
+        </section>
+    </main>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click',function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+
+    <aside class="sidebar">
+        <section class="advertisement">
+            <h3>Adopt Kittens!</h3>
+            <p>Find your perfect kitten campanion today.</p>
+        </section>
+    </aside>
+
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleButton = document.getElementById("darkModeToggle");
+            const body = document.body;
+        
+            // Check for saved preference
+            if (localStorage.getItem("darkMode") === "enabled") {
+                body.classList.add("dark-mode");
+            }
+        
+            toggleButton.addEventListener("click", () => {
+                body.classList.toggle("dark-mode");
+                if (body.classList.contains("dark-mode")) {
+                    localStorage.setItem("darkMode", "enabled");
+                } else {
+                    localStorage.setItem("darkMode", "disabled");
+                }
+            });
+        });
+        </script>
+        
+    
+</body>
+</html>

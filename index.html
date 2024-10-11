@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Landing Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Featured Article</h1>
+            <div class="hamburger">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="article.html">Article</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>            
+        </header>        
+
+    <main>
+        <section class="featured-article">
+            <h2>Even trees 'hold their breath' to avoid harmful wildfire smoke, research finds</h2>
+            <p>By Mj Riches published July 31, 2024</p>
+            <h2>Trees don't like to breathe wildfire smoke, either.</h2>
+            <div class="photo"><img src="Trees.webp" alt="photo description"></div>
+            <p>Trees and other plants can't escape wildfire smoke. (Image credit: PATRICK T. FALLON via Getty Images)</p>
+        </section>
+
+        <section class="latest-news">
+            <h2>Latest News</h2>
+            <h2>Ukraine claims to have destroyed large Russian ammunition depot in overnight drone attack</h2>
+            <p>By Niamh Kennedy, Maria Kostenko and Victoria Butenko, CNN</p>
+            <p>Updated 11:57 AM EDT, Wed September 18, 2024</p>
+            <div class="photo"><img src="Ukraine.jpeg" alt="photo description"></div>
+            <p>CNN— A Ukrainian drone attack launched overnight destroyed an ammunition depot in the western Russian region of Tver, a source from Ukraine’s Security Service (SBU) told CNN on Wednesday, causing a massive blast.
+               
+            The Ukrainian drones targeted the Russian defense ministry-operated warehouse in the city of Toropets, which was storing Iskander tactical missile systems, Tochka-U tactical missile systems, guided aerial bombs and artillery ammunition, the source said.</p>
+        </section>
+    </main>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+
+<button id="darkModeToggle">Toggle Dark Mode</button>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("darkModeToggle");
+        const body = document.body;
+    
+        // Check for saved preference
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark-mode");
+        }
+    
+        toggleButton.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                localStorage.setItem("darkMode", "disabled");
+            }
+        });
+    });
+    </script>    
+    
+    <footer>
+        <p>Go to our site <a href="https://www.livescience.com/planet-earth/plants/even-trees-hold-their-breath-to-avoid-harmful-wildfire-smoke-research-finds">Live Science</a></p>
+    </footer>
+</body>
+</html>

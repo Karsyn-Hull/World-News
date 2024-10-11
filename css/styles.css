@@ -1,0 +1,176 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color:#8F9779; /* Artichoke Green */
+    border: 1px solid #000000;
+    color: #ffffff; /* Header text and nav links are white */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #8F9779; /* Artichoke Green background */
+    min-height: 50px; /* Ensure enough height */
+    border-top: 1px solid transparent; /* Prevent margin collapse */
+    margin-top: 20px; /* Optional spacing */
+    color: #ffffff;
+}
+
+article-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+article-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px;
+    padding: 20px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1 fr; /* 3:1 ratio between content */
+    gap: 20px;
+    padding: 20px
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.advertisement {
+    padding: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+    background-color: #9DC183; /* Sage Green color*/
+    color: #ffffff;
+}
+
+.photo img {
+    width: 100%; /* Desired width */
+    height: 100%; /* Desired height */
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+}
+
+/* Hamburger Menu Style */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hide regular navigation items on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* show hamburger menu */
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none; /* initially hide navigation items */
+    }
+}
+
+    /* When clicking the hamburger menu, use javascript to toggle this class to the display items */
+    nav ul.active {
+        display: flex; /* Display navigation items in column */
+    }
+
+    .photo-gallery {
+        width: 500px; /* Width of the gallery */
+        height: 700px; /* Height of the gallery */
+        position: relative;
+        margin: auto; /* Center the gallery */
+    }
+    
+    .photo-container {
+        width: 500px; /* Desired width */
+        height: 700px; /* Desired height */
+        overflow: hidden; /* Prevent overflow */
+        position: relative;
+    }
+    
+    .photo-container img {
+        width: 100%; /* Fill the width of the container */
+        height: 100%; /* Fill the height of the container */
+        object-fit: cover; /* Maintain aspect ratio while covering the area */
+    }    
+    
+    /* Arrow Button Styles */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* Consistent padding */
+    font-size: 18px; /* Consistent font size */
+    z-index: 10;
+    border-radius: 50%; /* Keep them circular */
+}
+
+/* Position arrows at the outermost edges */
+#prevBtn {
+    left: 10px; /* Adjust as needed */
+}
+
+#nextBtn {
+    right: 10px; /* Adjust as needed */
+}
+
+/* Media query for all screen sizes */
+@media (max-width: 768px) {
+    .arrow {
+        padding: 10px; /* Keep consistent padding */
+        font-size: 18px; /* Keep consistent font size */
+    }
+}
+
+    /* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+.dark-mode header, .dark-mode footer {
+    background-color: #568203; /* Darker background for header and footer (Avocado Green) */
+    border: 1px solid #ffffff; /* Light border for visibility */
+}
+
+.dark-mode nav a {
+    color: #ffffff; /* Keep nav links white */
+}
+
+.dark-mode .advertisement {
+    background-color: #568203; /* Darker background for ads */
+    border: 1px solid #ffffff; /* Light border for ads */
+}
